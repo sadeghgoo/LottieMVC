@@ -3,19 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FAC172F15E2BE1838F0F968 /* Pods_PulseAnimataion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F35F3579F3568D8AAB9BA35 /* Pods_PulseAnimataion.framework */; };
+		AA21CDEC236DB2F800E2CDE4 /* Halo.json in Resources */ = {isa = PBXBuildFile; fileRef = AA21CDEA236DB2F700E2CDE4 /* Halo.json */; };
+		AA21CDED236DB2F800E2CDE4 /* circle.json in Resources */ = {isa = PBXBuildFile; fileRef = AA21CDEB236DB2F700E2CDE4 /* circle.json */; };
 		AA87ED8F236D94B500AEF300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87ED8E236D94B500AEF300 /* AppDelegate.swift */; };
 		AA87ED91236D94B500AEF300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87ED90236D94B500AEF300 /* SceneDelegate.swift */; };
 		AA87ED93236D94B500AEF300 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87ED92236D94B500AEF300 /* ViewController.swift */; };
 		AA87ED96236D94B500AEF300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA87ED94236D94B500AEF300 /* Main.storyboard */; };
 		AA87ED98236D94B700AEF300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA87ED97236D94B700AEF300 /* Assets.xcassets */; };
 		AA87ED9B236D94B700AEF300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA87ED99236D94B700AEF300 /* LaunchScreen.storyboard */; };
+		AA87EDA5236D98A500AEF300 /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87EDA4236D98A500AEF300 /* LottieAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47FC3D97524ECD6A491BF48E /* Pods-PulseAnimataion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseAnimataion.release.xcconfig"; path = "Target Support Files/Pods-PulseAnimataion/Pods-PulseAnimataion.release.xcconfig"; sourceTree = "<group>"; };
+		4F35F3579F3568D8AAB9BA35 /* Pods_PulseAnimataion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseAnimataion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA21CDEA236DB2F700E2CDE4 /* Halo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Halo.json; sourceTree = "<group>"; };
+		AA21CDEB236DB2F700E2CDE4 /* circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circle.json; sourceTree = "<group>"; };
 		AA87ED8B236D94B500AEF300 /* PulseAnimataion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseAnimataion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA87ED8E236D94B500AEF300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA87ED90236D94B500AEF300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,8 @@
 		AA87ED97236D94B700AEF300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA87ED9A236D94B700AEF300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA87ED9C236D94B700AEF300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA87EDA4236D98A500AEF300 /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
+		DB595F0A9043A9E2F7F28354 /* Pods-PulseAnimataion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseAnimataion.debug.xcconfig"; path = "Target Support Files/Pods-PulseAnimataion/Pods-PulseAnimataion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FAC172F15E2BE1838F0F968 /* Pods_PulseAnimataion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		227D5B97034AC1291E4A02A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F35F3579F3568D8AAB9BA35 /* Pods_PulseAnimataion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA87ED82236D94B500AEF300 = {
 			isa = PBXGroup;
 			children = (
 				AA87ED8D236D94B500AEF300 /* PulseAnimataion */,
 				AA87ED8C236D94B500AEF300 /* Products */,
+				F5DE2B87B3353F747E235430 /* Pods */,
+				227D5B97034AC1291E4A02A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +81,23 @@
 				AA87ED90236D94B500AEF300 /* SceneDelegate.swift */,
 				AA87ED92236D94B500AEF300 /* ViewController.swift */,
 				AA87ED94236D94B500AEF300 /* Main.storyboard */,
+				AA87EDA4236D98A500AEF300 /* LottieAnimationView.swift */,
+				AA21CDEB236DB2F700E2CDE4 /* circle.json */,
+				AA21CDEA236DB2F700E2CDE4 /* Halo.json */,
 				AA87ED97236D94B700AEF300 /* Assets.xcassets */,
 				AA87ED99236D94B700AEF300 /* LaunchScreen.storyboard */,
 				AA87ED9C236D94B700AEF300 /* Info.plist */,
 			);
 			path = PulseAnimataion;
+			sourceTree = "<group>";
+		};
+		F5DE2B87B3353F747E235430 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB595F0A9043A9E2F7F28354 /* Pods-PulseAnimataion.debug.xcconfig */,
+				47FC3D97524ECD6A491BF48E /* Pods-PulseAnimataion.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA87ED9F236D94B700AEF300 /* Build configuration list for PBXNativeTarget "PulseAnimataion" */;
 			buildPhases = (
+				B46F4779F1C9E651720E44EE /* [CP] Check Pods Manifest.lock */,
 				AA87ED87236D94B500AEF300 /* Sources */,
 				AA87ED88236D94B500AEF300 /* Frameworks */,
 				AA87ED89236D94B500AEF300 /* Resources */,
+				0BF6791EE892DDBAAF5948CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA87ED9B236D94B700AEF300 /* LaunchScreen.storyboard in Resources */,
+				AA21CDEC236DB2F800E2CDE4 /* Halo.json in Resources */,
+				AA21CDED236DB2F800E2CDE4 /* circle.json in Resources */,
 				AA87ED98236D94B700AEF300 /* Assets.xcassets in Resources */,
 				AA87ED96236D94B500AEF300 /* Main.storyboard in Resources */,
 			);
@@ -133,11 +170,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BF6791EE892DDBAAF5948CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PulseAnimataion/Pods-PulseAnimataion-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PulseAnimataion/Pods-PulseAnimataion-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PulseAnimataion/Pods-PulseAnimataion-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B46F4779F1C9E651720E44EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PulseAnimataion-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA87ED87236D94B500AEF300 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA87EDA5236D98A500AEF300 /* LottieAnimationView.swift in Sources */,
 				AA87ED93236D94B500AEF300 /* ViewController.swift in Sources */,
 				AA87ED8F236D94B500AEF300 /* AppDelegate.swift in Sources */,
 				AA87ED91236D94B500AEF300 /* SceneDelegate.swift in Sources */,
@@ -282,6 +362,7 @@
 		};
 		AA87EDA0236D94B700AEF300 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB595F0A9043A9E2F7F28354 /* Pods-PulseAnimataion.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +380,7 @@
 		};
 		AA87EDA1236D94B700AEF300 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47FC3D97524ECD6A491BF48E /* Pods-PulseAnimataion.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
