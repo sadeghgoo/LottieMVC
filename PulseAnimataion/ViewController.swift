@@ -18,11 +18,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         animationView.setupAnimation(animationName:"Halo")
-
+        
     }
 
     @IBAction func play(_ sender: Any) {
         animationView.playAnimation()
+        
         
     }
     

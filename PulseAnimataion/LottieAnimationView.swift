@@ -9,9 +9,35 @@
 import Foundation
 import Lottie
 
+/**
+ First create a view in interface builder and subclass it to LottieAnimationView.
+ then you should call setupAnimation method, this is require to run animation.
+
+ **Check This Eample :**
+     
+ this method should call
+ 
+     animationView.setupAnimation(animationName: "Halo")
+     
+
+ play animation
+ 
+     animationView.playAnimation()
+    
+ pause animation
+ 
+     animationView.pauseAnimation()
+     
+ stop animation
+ 
+     animationView.stopAnimation()
+    
+ 
+ */
+
 class LottieAnimationView: UIView {
     
-    enum AnimationStatus {
+    private enum AnimationStatus {
         case play
         case stop
         case pause
@@ -29,8 +55,7 @@ class LottieAnimationView: UIView {
     private var animation: Animation!
     
     private var animationStatus: AnimationStatus = .non
-    
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(animationView)
@@ -47,6 +72,7 @@ class LottieAnimationView: UIView {
         
         NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.didEnterBackgroundNotification) , name: UIApplication.didEnterBackgroundNotification, object: nil)
         
+        
     }
    
     override func layoutSubviews() {
@@ -54,56 +80,25 @@ class LottieAnimationView: UIView {
         setConstraint()
         
     }
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
     
     @objc private func willEnterForegroundNotification() {
         print("willEnterForegroundNotification")
+        self.playAnimation()
         
     }
     
     @objc private func didEnterBackgroundNotification() {
         print("didEnterBackgroundNotification")
+        self.pauseAnimation()
     }
     /// this is intialize of lottie animation view
     func setupAnimation(animationName: String, loopMode: LottieLoopMode = .loop) {
         
          self.animation = Animation.named(animationName)
          animationView.loopMode = loopMode
+         animationView.animation = self.animation
+    }
 
-    }
-    
-    
-    func playAnimation(completion:(() -> Void)? = nil) {
-        
-        animationStatus = .play
-        
-        animationView.animation = self.animation
-        
-        animationView.play { (bool) in
-            completion?()
-        }
-    }
-    
-    func pauseAnimation(completion:(() -> Void)? = nil) {
-        
-        animationStatus = .pause
-
-        self.animationView.pause()
-        completion?()
-    }
-    
-    func stopAnimation(completion:(() -> Void)? = nil) {
-        
-        animationStatus = .stop
-        
-        self.animationView.stop()
-        completion?()
-    }
-    
-    
     fileprivate func setConstraint() {
         
         let animationViewConstraint: [NSLayoutConstraint] =
@@ -116,5 +111,32 @@ class LottieAnimationView: UIView {
         
     }
     
+}
+extension LottieAnimationView {
+    
+    /// Play animation at time if animation is paused this method resume it
+    func playAnimation(completion:(() -> Void)? = nil) {
+        
+        animationStatus = .play
+    
+        animationView.play { (bool) in
+            completion?()
+        }
+    }
+    /// Pause the animation at time
+    func pauseAnimation(completion:(() -> Void)? = nil) {
+        
+        animationStatus = .pause
+        self.animationView.pause()
+        completion?()
+    }
+    /// Stop animation at time
+    func stopAnimation(completion:(() -> Void)? = nil) {
+        
+        animationStatus = .stop
+        
+        self.animationView.stop()
+        completion?()
+    }
 }
 
