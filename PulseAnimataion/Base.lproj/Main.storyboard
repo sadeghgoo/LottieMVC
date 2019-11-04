@@ -49,6 +49,10 @@
                                     <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YZB-5z-Toc"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vnm-T1-ce8">
+                                <rect key="frame" x="108" y="302" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -56,6 +60,7 @@
                     <connections>
                         <outlet property="animationView" destination="HZm-Na-QjA" id="QVT-XW-a4V"/>
                         <outlet property="frontView" destination="M3s-s8-EdB" id="AGr-a0-cty"/>
+                        <outlet property="imageview" destination="Vnm-T1-ce8" id="eUS-iP-Qee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
