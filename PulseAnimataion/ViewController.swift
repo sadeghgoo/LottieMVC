@@ -14,10 +14,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var animationView: LottieAnimationView!
         
+    @IBOutlet weak var frontView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        animationView.setupAnimation(animationName:"Halo")
+        animationView.setupAnimation(animationName:"circle")
+        frontView.layer.cornerRadius = 100
         
     }
 

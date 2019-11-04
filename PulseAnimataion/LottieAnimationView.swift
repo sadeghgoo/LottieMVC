@@ -10,25 +10,25 @@ import Foundation
 import Lottie
 
 /**
- First create a view in interface builder and subclass it to LottieAnimationView.
- then you should call setupAnimation method, this is require to run animation.
+
+Create a view and subclasss it to LottieAnimationView then call setupAnimation method to Initalize Animation
 
  **Check This Eample :**
      
- this method should call
+ This method like Intializer And should call
  
-     animationView.setupAnimation(animationName: "Halo")
+     animationView.setupAnimation(animationName: "AnimationName")
      
 
- play animation
+ Play animation
  
      animationView.playAnimation()
     
- pause animation
+ Pause animation
  
      animationView.pauseAnimation()
      
- stop animation
+ Stop animation
  
      animationView.stopAnimation()
     
@@ -48,6 +48,7 @@ class LottieAnimationView: UIView {
         let animationView = AnimationView()
         animationView.translatesAutoresizingMaskIntoConstraints = false
         animationView.contentMode = .scaleAspectFit
+        animationView.clipsToBounds = false
         return animationView
         
     }()
@@ -56,18 +57,23 @@ class LottieAnimationView: UIView {
     
     private var animationStatus: AnimationStatus = .non
         
+    /// This is intialize of lottie animation view
+     func setupAnimation(animationName: String, loopMode: LottieLoopMode = .loop) {
+         
+          self.animation = Animation.named(animationName)
+          animationView.loopMode = loopMode
+          animationView.animation = self.animation
+     }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(animationView)
-        animationView.clipsToBounds = false
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         addSubview(animationView)
-        animationView.clipsToBounds = false
 
-        
         NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.willEnterForegroundNotification) , name: UIApplication.willEnterForegroundNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.didEnterBackgroundNotification) , name: UIApplication.didEnterBackgroundNotification, object: nil)
@@ -91,27 +97,8 @@ class LottieAnimationView: UIView {
         print("didEnterBackgroundNotification")
         self.pauseAnimation()
     }
-    /// this is intialize of lottie animation view
-    func setupAnimation(animationName: String, loopMode: LottieLoopMode = .loop) {
-        
-         self.animation = Animation.named(animationName)
-         animationView.loopMode = loopMode
-         animationView.animation = self.animation
-    }
-
-    fileprivate func setConstraint() {
-        
-        let animationViewConstraint: [NSLayoutConstraint] =
-            [animationView.topAnchor.constraint(equalTo: topAnchor),
-             animationView.bottomAnchor.constraint(equalTo: bottomAnchor),
-             animationView.leadingAnchor.constraint(equalTo: leadingAnchor),
-             animationView.trailingAnchor.constraint(equalTo: trailingAnchor)]
-        
-        NSLayoutConstraint.activate(animationViewConstraint)
-        
-    }
-    
 }
+
 extension LottieAnimationView {
     
     /// Play animation at time if animation is paused this method resume it
@@ -138,5 +125,21 @@ extension LottieAnimationView {
         self.animationView.stop()
         completion?()
     }
+}
+
+extension LottieAnimationView {
+    
+    //Set constraint to animationview
+    fileprivate func setConstraint() {
+          
+          let animationViewConstraint: [NSLayoutConstraint] =
+              [animationView.topAnchor.constraint(equalTo: topAnchor),
+               animationView.bottomAnchor.constraint(equalTo: bottomAnchor),
+               animationView.leadingAnchor.constraint(equalTo: leadingAnchor),
+               animationView.trailingAnchor.constraint(equalTo: trailingAnchor)]
+          
+          NSLayoutConstraint.activate(animationViewConstraint)
+          
+      }
 }
 
