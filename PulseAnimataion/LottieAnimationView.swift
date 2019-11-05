@@ -20,6 +20,7 @@ enum AnimationStatus {
 
 protocol LottieAnimationViewDelegate: class {
     func didAnimationStatusChanged(status: AnimationStatus)
+    func didAnimationFinished(lottieView: LottieAnimationView)
 }
 
 /**
@@ -62,11 +63,11 @@ class LottieAnimationView: UIView {
     
     private var didAnimationPlayed: Bool = false
 
-    /** Current status of animation */
+    // Current status of animation
     private var animationStatus: AnimationStatus {
         return .non
     }
-        
+            
     /** This method is like Intializer of class and you should call it when you want create animation  */
     /// - parameter animationName: animation name in current bundle
     /// - parameter loopMode: loop mode of animatoin default is infinity loop 
@@ -77,14 +78,19 @@ class LottieAnimationView: UIView {
         animationView.animation = self.animation
         self.animationView.animationSpeed = animationSpeed
     }
+
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.willEnterForegroundNotification) , name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.didEnterBackgroundNotification) , name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(animationView)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.willEnterForegroundNotification) , name: UIApplication.willEnterForegroundNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.didEnterBackgroundNotification) , name: UIApplication.didEnterBackgroundNotification, object: nil)
         
     }
     
@@ -92,10 +98,6 @@ class LottieAnimationView: UIView {
         super.init(coder: coder)
         addSubview(animationView)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.willEnterForegroundNotification) , name: UIApplication.willEnterForegroundNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LottieAnimationView.didEnterBackgroundNotification) , name: UIApplication.didEnterBackgroundNotification, object: nil)
-        
         
     }
    
@@ -120,6 +122,12 @@ class LottieAnimationView: UIView {
         self.pauseAnimation()
     }
     
+    private func didAnimationFinished(finished: Bool) {
+          if finished {
+              lottieDelegate?.didAnimationFinished(lottieView: self)
+          }
+      }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -132,7 +140,12 @@ extension LottieAnimationView {
     func playAnimation(completion:(() -> Void)? = nil) {
         
         lottieDelegate?.didAnimationStatusChanged(status: .play)
-        animationView.play()
+        animationView.play { (finished) in
+            
+        // This method when called that animationview loop mode is playOnce otherwise this method don't called.
+        self.didAnimationFinished(finished: finished)
+            
+        }
         completion?()
 
     }
@@ -152,7 +165,8 @@ extension LottieAnimationView {
         self.animationView.stop()
         completion?()
     }
-   
+  
+
 }
 
 extension LottieAnimationView {

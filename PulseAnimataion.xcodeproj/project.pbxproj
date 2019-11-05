@@ -17,6 +17,11 @@
 		AA87ED98236D94B700AEF300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA87ED97236D94B700AEF300 /* Assets.xcassets */; };
 		AA87ED9B236D94B700AEF300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA87ED99236D94B700AEF300 /* LaunchScreen.storyboard */; };
 		AA87EDA5236D98A500AEF300 /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA87EDA4236D98A500AEF300 /* LottieAnimationView.swift */; };
+		AAD273B323715D53001072B0 /* StartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD273B223715D53001072B0 /* StartButton.swift */; };
+		AAD273B5237169FD001072B0 /* countDown.json in Resources */ = {isa = PBXBuildFile; fileRef = AAD273B4237169FD001072B0 /* countDown.json */; };
+		AAD273B723716D83001072B0 /* number.json in Resources */ = {isa = PBXBuildFile; fileRef = AAD273B623716D83001072B0 /* number.json */; };
+		AAD273B923716DE0001072B0 /* number1.json in Resources */ = {isa = PBXBuildFile; fileRef = AAD273B823716DE0001072B0 /* number1.json */; };
+		AAD273BB23716FAD001072B0 /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = AAD273BA23716FAD001072B0 /* document.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		AA87ED9A236D94B700AEF300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA87ED9C236D94B700AEF300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA87EDA4236D98A500AEF300 /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
+		AAD273B223715D53001072B0 /* StartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButton.swift; sourceTree = "<group>"; };
+		AAD273B4237169FD001072B0 /* countDown.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countDown.json; sourceTree = "<group>"; };
+		AAD273B623716D83001072B0 /* number.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = number.json; sourceTree = "<group>"; };
+		AAD273B823716DE0001072B0 /* number1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = number1.json; sourceTree = "<group>"; };
+		AAD273BA23716FAD001072B0 /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
 		DB595F0A9043A9E2F7F28354 /* Pods-PulseAnimataion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseAnimataion.debug.xcconfig"; path = "Target Support Files/Pods-PulseAnimataion/Pods-PulseAnimataion.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,10 +91,15 @@
 				AA87ED90236D94B500AEF300 /* SceneDelegate.swift */,
 				AA87ED92236D94B500AEF300 /* ViewController.swift */,
 				AA87EDA4236D98A500AEF300 /* LottieAnimationView.swift */,
+				AAD273B223715D53001072B0 /* StartButton.swift */,
+				AAD273BA23716FAD001072B0 /* document.json */,
 				AA87ED94236D94B500AEF300 /* Main.storyboard */,
+				AAD273B4237169FD001072B0 /* countDown.json */,
 				AA21CDEB236DB2F700E2CDE4 /* circle.json */,
 				AA21CDEA236DB2F700E2CDE4 /* Halo.json */,
+				AAD273B823716DE0001072B0 /* number1.json */,
 				AA87ED97236D94B700AEF300 /* Assets.xcassets */,
+				AAD273B623716D83001072B0 /* number.json */,
 				AA87ED99236D94B700AEF300 /* LaunchScreen.storyboard */,
 				AA87ED9C236D94B700AEF300 /* Info.plist */,
 			);
@@ -160,9 +175,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD273B5237169FD001072B0 /* countDown.json in Resources */,
+				AAD273B923716DE0001072B0 /* number1.json in Resources */,
 				AA87ED9B236D94B700AEF300 /* LaunchScreen.storyboard in Resources */,
 				AA21CDEC236DB2F800E2CDE4 /* Halo.json in Resources */,
 				AA21CDED236DB2F800E2CDE4 /* circle.json in Resources */,
+				AAD273BB23716FAD001072B0 /* document.json in Resources */,
+				AAD273B723716D83001072B0 /* number.json in Resources */,
 				AA87ED98236D94B700AEF300 /* Assets.xcassets in Resources */,
 				AA87ED96236D94B500AEF300 /* Main.storyboard in Resources */,
 			);
@@ -219,6 +238,7 @@
 			files = (
 				AA87EDA5236D98A500AEF300 /* LottieAnimationView.swift in Sources */,
 				AA87ED93236D94B500AEF300 /* ViewController.swift in Sources */,
+				AAD273B323715D53001072B0 /* StartButton.swift in Sources */,
 				AA87ED8F236D94B500AEF300 /* AppDelegate.swift in Sources */,
 				AA87ED91236D94B500AEF300 /* SceneDelegate.swift in Sources */,
 			);

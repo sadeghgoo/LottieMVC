@@ -20,11 +20,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageview.image = UIImage(named: "map")
-        imageview.layer.cornerRadius = 100
-        imageview.contentMode = .scaleAspectFill
-        animationView.setupAnimation(animationName: <#T##String#>, loopMode: <#T##LottieLoopMode#>, animationSpeed: <#T##CGFloat#>)
-        frontView.layer.cornerRadius = 100
+        
+        animationView.setupAnimation(animationName: "Halo", loopMode: .playOnce)
         animationView.lottieDelegate = self
     }
 
@@ -45,6 +42,12 @@ class ViewController: UIViewController {
     }
 }
 extension ViewController: LottieAnimationViewDelegate {
+    
+    func didAnimationFinished(lottieView: LottieAnimationView) {
+        lottieView.pauseAnimation()
+        
+    }
+    
     
     func didAnimationStatusChanged(status: AnimationStatus) {
         if status == .play {
